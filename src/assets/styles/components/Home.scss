@@ -1,0 +1,41 @@
+
+.btn{
+  height: fit-content;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 1.5em;
+  color: white;
+  background-color: #16acc9;
+  border: none;
+  outline: none;
+  /*   border: 1.5px ; */
+}
+.btn:hover{
+  color: #f2ff00;
+  box-shadow: 0px 0px 10px 10px #d2da4b;
+}
+.btn:disabled{
+ box-shadow: none;
+ color: #94d8da;
+}
+.btnJugar{
+  margin: auto;
+  outline: none;
+}
+.home{
+  width: 100vw;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: auto;
+}
+.homeImgCn{
+  display: flex;
+}
+.homeImg{
+  width: 80%;
+  margin: auto;
+}
