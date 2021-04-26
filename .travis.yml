@@ -23,7 +23,7 @@
       "provider": "pages",
       "strategy": "git",
       "edge": true,
-      "skip-cleanup": true,
+      "skip_cleanup": true,
       "commit_message": "Deploy Release",
       "on": {
         "branch": [
