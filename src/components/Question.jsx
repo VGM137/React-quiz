@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Options from './Options'
 import Next from './NextButton'
 import Finish from './FinishButton'
+import '../assets/styles/components/Question.scss';
 
 const questionOptions = ({ posibleAnswers, quizOrder }) => {
   
@@ -11,7 +12,7 @@ const questionOptions = ({ posibleAnswers, quizOrder }) => {
 
   return(
     <>
-      <div id="questioContainer" className="questionContainer">
+      <div id="questionContainer" className="questionContainer">
         <h2 id='pregunta' className='pregunta'>¿Quién es este personaje?</h2>
         <div id="imageContainer" className="imageContainer">
           <img id='characterImg' className="characterImg" src={posibleAnswers[0].element.image} alt="" />
@@ -21,7 +22,7 @@ const questionOptions = ({ posibleAnswers, quizOrder }) => {
           ?
             <Next />
             :
-            <Link to='/'>
+            <Link to='/results'>
               <Finish />
             </Link>
         }

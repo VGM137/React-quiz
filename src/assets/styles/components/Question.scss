@@ -1,0 +1,54 @@
+.questionContainer{
+  width: 80%;
+  margin: auto;
+}
+.imageContainer{
+  max-width: 80%;
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.btnContainer{
+  display: block
+}
+@media screen and (max-width: 1100px){
+  h1{
+    font-size: 1.7em;
+  }
+  .optionsContainer{
+    max-width: 40%;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 769px){
+  h1{
+    font-size: 1.5em;
+  }
+  .optionsContainer{
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 500px){
+  h1{
+    font-size: 1.3em;
+  }
+  .optionsContainer{
+    display: block
+  }
+  .optionBtn{
+    margin: 8px;
+    width: 80%;
+  }
+  .characterImg{
+    width: 200px;
+  }
+}
+@media screen and (max-width: 321px){
+  .optionBtn{
+    margin: 8px;
+    width: 90%;
+  }
+}

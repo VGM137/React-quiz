@@ -9,12 +9,14 @@ const reducer = (state, action) => {
       case 'QUIZ_ORDER':
         return {
           ...state,
-          quizOrder: action.payload
+          quizOrder: action.payload[0],
+          difficulty: action.payload[1]
         }
       case 'RANDOM_NUMBERS':
         return{
           ...state,
-          randomly: action.payload
+          randomly: action.payload,
+          nextState: { value: '' }
         }
       case 'POSIBLE_ANSWERS':
         return{
@@ -29,6 +31,12 @@ const reducer = (state, action) => {
       case 'UPDATE_ANSWERED':
         state.answered.splice(state.answered.length-1, 1, action.payload)
 
+      case 'NEXT_STATE':
+        return{
+          ...state,
+          nextState: { value: action.payload }
+        }
+          
       default: return state
     }
 

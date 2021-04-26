@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-router-dom';
 import { connect } from 'react-redux';
 import { randomly, posibleAnswers } from '../actions'
+import '../assets/styles/components/NextButton.scss'
 
 const Next = (props) => {
-  
+
   const random = () => {
     let randomNumbers = []
     do{
@@ -23,6 +24,12 @@ const Next = (props) => {
   };
 
   const setOptions = () => {
+    const optionsContainer = document.getElementById('optionsContainer');
+    for(let i = 0; i < optionsContainer.children.length; i++){
+      let opt = optionsContainer.children[i];
+      opt.classList.remove('optionActiveBtn');
+    }
+
     if(props.quizOrder.length > 0){
       random()
       const rightAnswer = {
@@ -63,7 +70,8 @@ const Next = (props) => {
         <button 
           id="nextQuestion" 
           className="btnSiguiente btn"
-          onClick={setOptions} 
+          onClick={() => setOptions()}
+          disabled={!props.nextState.value}
           > Siguiente
         </button>
       </div>
@@ -75,6 +83,7 @@ const mapStateToProps = state => {
   return ({
     quizOrder: state.quizOrder,
     levelInfo: state.levelInfo,
+    nextState: state.nextState
   })
 };
 

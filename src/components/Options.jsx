@@ -1,22 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addAnswered, updateAnswered } from '../actions';
+import { addAnswered, updateAnswered, nextState} from '../actions';
+import '../assets/styles/components/Options.scss';
 
 const Options = (props) => {
   
-  const handleOption = (id) => {
-    const { levelInfo, quizOrder, answered } = props
-    let difficulty = 0;
-    if(levelInfo.length == 20){
-      difficulty = 10;
-    }else if(levelInfo.length == 100){
-      difficulty = 15;
-    }else if(levelInfo.length > 100){
-      difficulty = 20;
-    };
+  const handleOption = (id, index) => {
+    const { difficulty, quizOrder, answered } = props
+    const optionsContainer = document.getElementById('optionsContainer');
     
-    if(difficulty-answered.length == quizOrder.length){
+    const option = optionsContainer.children[index]
+    
+    for(let i = 0; i < optionsContainer.children.length; i++){
+      let opt = optionsContainer.children[i];
+      opt.classList.remove('optionActiveBtn');
+    }
+
+    option.classList.add('optionActiveBtn');
+    props.nextState(id)
+    
+    if(difficulty.number-answered.length == quizOrder.length){
       props.updateAnswered(id);
     }else{
       props.addAnswered(id);
@@ -27,30 +30,26 @@ const Options = (props) => {
     <div id="optionsContainer" className="optionsContainer">
       <button
         id="optionOne" 
-        className="optionBtn" 
-        value='false'
-        onClick={() => handleOption(props.posibleAnswers[props.randomly[0]].id)}
+        className="optionBtn"
+        onClick={() => handleOption(props.posibleAnswers[props.randomly[0]].id, 0)}
         >{props.posibleAnswers[props.randomly[0]].element.name}
       </button>
       <button
         id="optionTwo" 
-        className="optionBtn" 
-        value='false'
-        onClick={() => handleOption(props.posibleAnswers[props.randomly[1]].id)}
+        className="optionBtn"
+        onClick={() => handleOption(props.posibleAnswers[props.randomly[1]].id, 1)}
         >{props.posibleAnswers[props.randomly[1]].element.name}
       </button>
       <button
         id="optionThree" 
-        className="optionBtn" 
-        value='false'
-        onClick={() => handleOption(props.posibleAnswers[props.randomly[2]].id)}
+        className="optionBtn"
+        onClick={() => handleOption(props.posibleAnswers[props.randomly[2]].id, 2)}
         >{props.posibleAnswers[props.randomly[2]].element.name}
       </button>
       <button
         id="optionFour" 
-        className="optionBtn" 
-        value='false'
-        onClick={() => handleOption(props.posibleAnswers[props.randomly[3]].id)}
+        className="optionBtn"
+        onClick={() => handleOption(props.posibleAnswers[props.randomly[3]].id, 3)}
         >{props.posibleAnswers[props.randomly[3]].element.name}
       </button>
     </div>
@@ -59,7 +58,7 @@ const Options = (props) => {
 
 const mapStateToProps = state => {
   return ({
-    levelInfo: state.levelInfo,
+    difficulty: state.difficulty,
     quizOrder: state.quizOrder,
     posibleAnswers: state.posibleAnswers,
     randomly: state.randomly,
@@ -69,6 +68,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   addAnswered,
   updateAnswered,
+  nextState,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Options);

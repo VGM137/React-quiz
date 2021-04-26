@@ -22,7 +22,13 @@ export const addAnswered = payload => ({
   type: 'ADD_ANSWERED',
   payload,
 });
+
 export const updateAnswered = payload => ({
   type: 'UPDATE_ANSWERED',
   payload,
 });
+
+export const nextState = payload => ({
+  type: 'NEXT_STATE',
+  payload,
+})

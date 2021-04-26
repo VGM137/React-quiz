@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../assets/styles/components/NextButton.scss'
 
 const FinishButton = (props) => {
 

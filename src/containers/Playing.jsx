@@ -13,14 +13,23 @@ const Playing =  (props) => {
   const orderQuiz = () => {  
     let difficulty = 0
     if(characters.length == 20){
-      difficulty = 10
+      difficulty = {
+        number: 10,
+        id: 'Fácil'
+      }
     }else if(characters.length == 100){
-      difficulty = 15
+      difficulty = {
+        number: 15,
+        id: 'Intermedio'
+      }
     }else if(characters.length > 100){
-      difficulty = 20
+      difficulty = {
+        number: 20,
+        id: 'Difícil'
+      }
     }
     do{
-      let number = Math.floor(Math.random() * (difficulty) ) + 1
+      let number = Math.floor(Math.random() * (difficulty.number) ) + 1
         characters.map(function(character){
           let char = character.id;
           let charIndex = characters.indexOf(character);
@@ -29,9 +38,9 @@ const Playing =  (props) => {
             quizOrder.push(splice[0]);
           }
         }) 
-    }while(quizOrder.length <= difficulty - 1)
+    }while(quizOrder.length <= difficulty.number - 1)
 
-    props.quizOrder(quizOrder)
+    props.quizOrder([quizOrder, difficulty])
   };
   
   const random = () => {
