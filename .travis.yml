@@ -3,11 +3,7 @@
   "os": [
     "linux"
   ],
-  "dist": "xenial",
-  "cache": {
-    "directories": [
-      "~/.npm"
-    ]
+  "dist": "xenial"
   },
   "node_js": [
     "node"
