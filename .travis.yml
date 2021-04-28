@@ -1,39 +1,22 @@
-{
-  "language": "node_js",
-  "os": [
-    "linux"
-  ],
-  "dist": "xenial",
-  "cache": {
-    "directories": [
-      "~/.npm"
-    ]
-  },
-  "node_js": [
-    "node"
-  ],
-  "git": {
-    "depth": 3
-  },
-  "script": [
-    "yarn build"
-  ],
-  "deploy": [
-    {
-      "provider": "pages",
-      "strategy": "git",
-      "edge": true,
-      "skip_cleanup": true,
-      "commit_message": "Deploy Release",
-      "on": {
-        "branch": [
-          "master"
-        ]
-      },
-      "keep_history": true,
-      "token": "$GITHUB_TOKEN",
-      "local_dir": "dist/",
-      "target_branch": "gh-pages"
-    }
-  ]
-}
+language: node_js
+cache: 
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - 12
+git:
+  depth: 3
+script":
+  - yarn build
+deploy:
+    provider: pages
+    skip_cleanup: true
+    keep_history: true
+    github-token: "$GITHUB_TOKEN"
+    local_dir: dist/
+    target_branch: gh-pages
+    commit_message: "Deploy Release",
+    on:
+      branch: master
+
