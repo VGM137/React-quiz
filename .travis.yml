@@ -3,7 +3,11 @@
   "os": [
     "linux"
   ],
-  "dist": "xenial"
+  "dist": "xenial",
+  "cache": {
+    "directories": [
+      "~/.npm"
+    ]
   },
   "node_js": [
     "node"
@@ -19,7 +23,7 @@
       "provider": "pages",
       "strategy": "git",
       "edge": true,
-      "cleanup": true,
+      "skip_cleanup": true,
       "commit_message": "Deploy Release",
       "on": {
         "branch": [
