@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/components/Results.scss';
-import finalImage from '../assets/static/final_image.png';
+/* import finalImage from '../assets/static/final_image.png'; */
 
 const Results = (props) => {
   
@@ -35,7 +35,7 @@ const Results = (props) => {
             <h1 id="fanLevel" className="fanLevel">{fanLevel}</h1>
           </div>
           <div id="finalImgContainer" className="finalImgContainer">
-            <img id="finalImg" className="finalImg" src={finalImage} alt="" />
+            <img id="finalImg" className="finalImg" /* src={finalImage} */ alt="" />
           </div>
       </div>
     </div>
