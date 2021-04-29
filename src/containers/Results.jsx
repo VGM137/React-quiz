@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/components/Results.scss';
-/* import finalImage from '../assets/static/final_image.png'; */
+import finalImage from '../assets/static/final_image.png';
 
 const Results = (props) => {
   
