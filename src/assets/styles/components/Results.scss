@@ -2,7 +2,7 @@
   height: inherit;
 }
 .resultsWrapper{
-  background-image: url('../../static/background.jpg');
+  background-image: url('../../static/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -28,11 +28,11 @@
 .resultsContainer{
   height: inherit;
   display: grid;
-  margin: 0 auto;
+  margin: auto;
   max-width: 80%;
   text-align: left;
-  color: #c8e74c;
-  background-color: #2b873a;
+  color: #cdd8d6;
+  background-color: #2b873a98;
   box-shadow: 0px 0px 20px 10px #aecd36;
   border-radius: 10px;
 }
@@ -52,7 +52,6 @@
 @media screen and (max-width: 500px){
   .results h1{
     font-size: 1.3em;
-    margin: 20px
   }
 }
 @media screen and (max-width: 321px){
@@ -61,7 +60,7 @@
   }
   .results h1{
     font-size: 1.1em;
-    margin: 30px
+    margin: 20px
   }
   .finalImg{
     height: 75%;
