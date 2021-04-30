@@ -1,4 +1,12 @@
+.link{
+  height: inherit;
+}
 .resultsWrapper{
+  background-image: url('../../static/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   width: 100vw;
   background-color: #1d5226;
@@ -6,48 +14,56 @@
 }
 .results{
   height: 90%;
-  width: 50%;
-  display: grid;
-  margin: auto;
-  color: #c8e74c;
-  background-color: #2b873a;
-  box-shadow: 0px 0px 20px 10px #aecd36;
-  border-radius: 20px;
-  grid-template-rows: 35% 65%;
+   display: grid;
+   margin: auto;
+   grid-template-rows: 35% 65%;
+   grid-template-columns: 100%; 
+
 /*   text-shadow: 5px 5px 5px #b8dfaa; */
 }
 .results h1{
-  font-size: 1.5em;
-  margin: 20px
+  font-size: 1.2em;
+  margin: 10px 20px;
 }
 .resultsContainer{
-  margin: auto;
+  height: inherit;
+  display: grid;
+  margin: 0 auto;
   max-width: 80%;
   text-align: left;
+  color: #c8e74c;
+  background-color: #2b873a;
+  box-shadow: 0px 0px 20px 10px #aecd36;
+  border-radius: 10px;
 }
 .finalImgContainer {
+  align-self: center;
+  display: flex;
   height: inherit;
   width: 100%;
-  display: block;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
 }
 .finalImg{
   height: inherit;
 }
 @media screen and (max-width: 769px){
-  .results{
-    width: 70%;
-  }
 }
 @media screen and (max-width: 500px){
   .results h1{
     font-size: 1.3em;
-    margin: 20px 0
+    margin: 20px
   }
 }
 @media screen and (max-width: 321px){
+  .results {
+    grid-template-rows: 50% 50%;
+  }
   .results h1{
     font-size: 1.1em;
-    margin: 30px 0
+    margin: 30px
+  }
+  .finalImg{
+    height: 75%;
   }
 }

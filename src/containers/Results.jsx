@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Results.scss';
 import finalImage from '../assets/static/final_image.png';
 
@@ -30,12 +31,14 @@ const Results = (props) => {
     <div className='resultsWrapper'>
       <div id="results" className="results">
           <div id="resultsContainer" className="resultsContainer">
-            <h1 id="mode" className="mode">{props.difficulty.id}</h1>
+            <h1 id="mode" className="mode">Nivel: {props.difficulty.id}</h1>
             <h1 id="puntuacion" className="puntuacion">Score: {rightAnswers.length}/{props.answered.length} </h1>
             <h1 id="fanLevel" className="fanLevel">{fanLevel}</h1>
           </div>
           <div id="finalImgContainer" className="finalImgContainer">
-            <img id="finalImg" className="finalImg" src={finalImage} alt="" />
+            <Link className='link' to="/">
+              <img id="finalImg" className="finalImg" src={finalImage} alt=""  />
+            </Link>
           </div>
       </div>
     </div>
