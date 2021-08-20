@@ -36,6 +36,20 @@ const reducer = (state, action) => {
           ...state,
           nextState: { value: action.payload }
         }
+
+      case 'RESET':
+        return{
+          name: 'Victor',
+          levelInfo: [],
+          difficulty: {
+            number: '',
+            id: 'Debes jugar para conseguir un Score',
+          },
+          quizOrder: [],
+          randomly: [],
+          answered: [],
+          nextState: {value: ''}
+        }
           
       default: return state
     }

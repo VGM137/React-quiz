@@ -32,3 +32,8 @@ export const nextState = payload => ({
   type: 'NEXT_STATE',
   payload,
 })
+
+export const reset = payload => ({
+  type: 'RESET',
+  payload,
+})

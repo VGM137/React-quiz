@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { reset } from '../actions';
 import '../assets/styles/components/Results.scss';
 import finalImage from '../assets/static/final_image.png';
 
@@ -27,6 +28,10 @@ const Results = (props) => {
     fanLevel = `¿Alguna vez has visto R&M?`
   }
 
+  const handleClick = () => {
+    props.reset()
+  }
+
   return (
     <div className='resultsWrapper'>
       <div id="results" className="results">
@@ -37,7 +42,7 @@ const Results = (props) => {
           </div>
           <div id="finalImgContainer" className="finalImgContainer">
             <Link className='link' to="/">
-              <img id="finalImg" className="finalImg" src={finalImage} alt=""  />
+              <img id="finalImg" className="finalImg" src={finalImage} alt="" onClick={handleClick} />
             </Link>
           </div>
       </div>
@@ -51,5 +56,7 @@ const mapStateToProps = state => {
     answered: state.answered,
   }
 }
-
-export default connect(mapStateToProps, null)(Results)
+const dispatchStateToProps = {
+  reset
+}
+export default connect(mapStateToProps, dispatchStateToProps)(Results)

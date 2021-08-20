@@ -19,7 +19,7 @@ const Options = (props) => {
     option.classList.add('optionActiveBtn');
     props.nextState(id)
     
-    if(difficulty.number-answered.length == quizOrder.length){
+    if(difficulty.number-1-answered.length == quizOrder.length){
       props.updateAnswered(id);
     }else{
       props.addAnswered(id);
